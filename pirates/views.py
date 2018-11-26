@@ -44,3 +44,8 @@ class SalvarTesouro(View):
             return HttpResponseRedirect(reverse('inicio'))
         
         return render(request, 'salvar_tesouro.html', {'tesouroForm': form})
+
+class RemoverTesouro(View):
+     def get(self, request, id):
+        Tesouro.objects.get(id=id).delete()
+        return HttpResponseRedirect(reverse('inicio'))

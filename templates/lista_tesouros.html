@@ -19,13 +19,13 @@
       <tbody>
         {% for tesouro in tesouros %}
         <tr>
-          <td><img src="{% static "imgs/calice.png" %}"></td>
+          <td><img src="{{ tesouro.img_tesouro.url }}"></td>
           <td>{{tesouro.nome}}</td>
           <td>{{tesouro.preco}}</td>
           <td>{{tesouro.quantidade}}</td>
           <td>{{tesouro.total}}</td>
-          <td><img src="{% static "imgs/edit.png" %}" alt="editar"></td>
-          <td><img src="{% static "imgs/delete.svg" %}" alt="Deletar"></td>
+          <td><img src="{% static 'imgs/edit.png' %}" alt="editar"></td>
+          <td><a href="{% url 'remover' tesouro.id %}"><img src=" {% static 'imgs/delete.svg' %}" alt="Deletar"></a></td>
         </tr>
         {%endfor%}
       </tbody>

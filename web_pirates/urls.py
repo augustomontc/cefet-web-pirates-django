@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', ListaTesourosView.as_view(),name='inicio'),
     path('inserir', SalvarTesouro.as_view(),name='inserir'),
+    path('remover/<int:id>', RemoverTesouro.as_view(),name='remover'),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
