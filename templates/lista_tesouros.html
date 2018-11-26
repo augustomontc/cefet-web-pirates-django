@@ -17,20 +17,22 @@
         </tr>
       </thead>
       <tbody>
+        {% for tesouro in tesouros %}
         <tr>
-          <td><img src="{% static "imgs/exemplo-de-icone.png" %}"></td>
-          <td>Tesouro de exemplo</td>
-          <td>200</td>
-          <td>5</td>
-          <td>1.000</td>
-          <td><img src="" alt="editar"></td>
-          <td><img src="" alt="Deletar"></td>
+          <td><img src="{% static "imgs/calice.png" %}"></td>
+          <td>{{tesouro.nome}}</td>
+          <td>{{tesouro.preco}}</td>
+          <td>{{tesouro.quantidade}}</td>
+          <td>{{tesouro.total}}</td>
+          <td><img src="{% static "imgs/edit.png" %}" alt="editar"></td>
+          <td><img src="{% static "imgs/delete.svg" %}" alt="Deletar"></td>
         </tr>
+        {%endfor%}
       </tbody>
       <tfoot>
         <tr>
           <td colspan="4">Total geral</td>
-          <td><!--Insira aqui o total geral-->  </td>
+          <td>{{total_geral}}  </td>
           <td colspan="2"></td>
         </tr>
       </tfoot>
